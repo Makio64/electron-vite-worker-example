@@ -4,7 +4,7 @@ import { electronAPI } from '@electron-toolkit/preload'
 // Custom APIs for renderer
 const api = {
   receive: (channel, func) => {
-    ipcRenderer.on(channel, (event, ...args) => func(...args))
+    ipcRenderer.on(channel, (_event, ...args) => func(...args))
   },
   send: (channel, data) => {
     ipcRenderer.send(channel, data)
